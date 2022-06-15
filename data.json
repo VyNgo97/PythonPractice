@@ -1,0 +1,11 @@
+{
+    "id": "4",
+    "model": "Surface Pro 6",
+    "disk_space": "256GB",
+    "screen_size": "13in",
+    "details": {
+        "screen-type": "led",
+        "price":"$999.00",
+        "supports": ["vga", "hdmi", "dp"]
+        }
+}
