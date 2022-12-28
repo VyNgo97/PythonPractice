@@ -19,3 +19,24 @@ class TestObj:
 
 new_obj = TestObj("Vy")
 # print(new_obj.__repr__())
+
+""" Pythonic Card Deck """
+import collections
+
+# Creates a simple class to represent a card. Cards only have a rank and suit so this works fine.
+Card = collections.namedtuple('Card', ['rank', 'suit'])
+
+class FrenchDeck:
+    ranks = [str(n) for n in range(2, 11)] + list('JQKA')
+    # The book uses 'spades diamonds clubs hearts'.split() <- easy way but not as clear about the type 
+    suits = ['spades', 'diamonds', 'club', 'hearts'] 
+
+    def __init__(self) -> None:
+        # creates a deck of cards of type namedtuple with suit and rank -> similar to a nested for loop
+        self._cards = [Card(rank, suit) for suit in self.suits for rank in self.ranks]
+
+    def __len__(self):
+        return len(self._cards)
+
+    def __getitem__(self, position):
+        return self._cards[position]
