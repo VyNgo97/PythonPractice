@@ -24,6 +24,7 @@ new_obj = TestObj("Vy")
 import collections
 
 # Creates a simple class to represent a card. Cards only have a rank and suit so this works fine.
+# This is used when there is a class that is only a bundle of attributes and no custom methods. We can extend the attributes by adding to the list.
 Card = collections.namedtuple('Card', ['rank', 'suit'])
 
 class FrenchDeck:
